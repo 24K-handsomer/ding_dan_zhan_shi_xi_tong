@@ -1,0 +1,62 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+	<title>扫码支付</title>
+	<link href="/Public/Customes/css/common.css" rel="stylesheet">
+	<link href="/Public/Customes/css/scan-weixin.css" rel="stylesheet">
+</head>
+<style type="text/css">
+	/* .wximg{
+		max-width: 25%;
+	} */
+</style>
+<body>
+	<div class="header fn-clear">
+		<div class="container">
+			<div class="fn-left logo">
+				<i class="weixin-ico fn-left"></i>
+				<span class="fn-left">Micro channel<br>scan code</span>
+			</div>
+			<div class="fn-right welcome">欢迎您使用微信扫码支付</div>
+		</div>
+	</div>
+
+	<div class="container" id="container">
+		<div class="play-main fn-clear mt10"> 
+			<div class="fn-left text-main">  
+				<!-- <div>来自深圳沱沱河国际贸易有限公司 订单号：
+					<span class="ft-yellow">IDTTGM099367220171030094015172</span>
+				</div> -->
+				<div>请您确认交易信息及付款金额后及时付款，以便订单尽快处理！</div>
+				<div>请在扫描二维码付款时，在“添加留言”处填写和订单一样的姓名！</div> 
+			</div> 
+
+			<div class="fn-right play-money"> 
+				<p>应付金额<span class="ft-yellow"> <?php echo ($price); ?></span></p>
+				<p> </p>
+				<!-- <p>含手续费&nbsp;&nbsp;&nbsp;0.00元</p> --> 
+			</div> 
+		</div> 
+
+		<div class="scan-main mt10"> 
+			<div class="fn-clear"> 
+				<div class="fn-left scan-pic"> 
+					<dl>微信扫码支付</dl> 
+					<dt><img src="<?php echo ($wximg); ?>" ></dt> 
+					<dd class="mt10"><span>请使用微信扫一扫<br>扫描二维码支付</span></dd> 
+				</div> 
+			<div class="fn-right scan-examples"> 
+				<img src="/Public/Customes/img/weixin-play.jpg"> 
+			</div> 
+		</div> 
+
+		<div class="scan-back mt20">
+			<a href="javascript:window.opener=null;window.open('','_self');window.close();">&lt;完成付款，关闭页面</a>
+		</div> 
+	</div>
+
+	<div class="footer">
+		<div class="footer-text container">Copyright 2011-2016 易极付 版权所有 渝ICP备11005152号-2</div>
+	</div>
+</body>
+</html>

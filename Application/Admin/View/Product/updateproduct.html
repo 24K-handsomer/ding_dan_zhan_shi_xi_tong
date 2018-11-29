@@ -1,0 +1,152 @@
+<extend name="Public/base"/>
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/filelist.css">
+	<style type="text/css">
+		#table-top{
+			text-align: center;
+		}
+		.file{
+            display: block;
+            /* width: 300px;
+             height: 300px; */ 
+            opacity:0;
+            margin: -25px 0 0 20%;            
+        }
+        table>tbody>tr>td:nth-child(3) {
+		    width: 35%;
+		    padding: 18px;
+		}
+		table>tbody>tr>td:nth-child(4) {
+		    width: 25%;
+		}
+		table>tbody>tr>td:nth-child(3)>img {
+		    max-width: 100%;
+		    max-height: 300px;
+		    /* width: 300px;
+		    height: 300px; */
+		    margin: auto;
+		}
+	</style>
+</block>
+<block name="nav">
+	<span>编辑产品价格表</span>
+</block>
+<block name="body">
+	<div id="row">编辑产品价格表</div>
+	<form action="__CONTROLLER__/addprice?pid={$pid}" method="POST" enctype="multipart/form-data">
+		<input type="hidden" name="trlen" class="trlen" value="">
+		<table border="1" cellpadding="0" cellspacing="0" id="xianshi">
+			<tr>
+				<td>价格名</td>
+				<td>价格值</td>
+				<td>付款二维码</td>
+				<td>操作</td>
+			</tr>
+			<?php $i=-1; ?>
+			<foreach name="pricelist" item="v">
+				<tr>
+					<td><input type='text' name="" value="{$v.prname}"></td>
+					<td><input type='text' name="" value="{$v.price}">元</td>
+					<td>
+						<img class='preview' src="{$v.wximg}" alt='点击上传图片'/>
+					</td>
+				
+					<td>
+						<!-- <a href="__CONTROLLER__/deleteprice?id={$v.prid}">删除</a> -->
+					</td>
+				</tr>
+			</foreach>
+
+		</table>
+		<div id="table-top">
+			<input type="button" name="" value="增加价格组" onclick="tmadd()">
+			<input type="button" name="" value="提交" onclick="checksubmit()">
+		</div>
+	</form>
+	</div>
+</block>
+<block name="script">
+<script type="text/javascript">
+$(function(){
+
+	
+});
+
+
+
+//二维码图片
+$(document).on('change','.file', function(){
+    //获取文件列表对象
+    var fileList = $(this)[0].files;
+    //创建文件流获取文件地址
+    var src = URL.createObjectURL(fileList[0]);
+    //设置图片路径
+    $(this).prevAll(".preview").attr("src", src);
+    $(this).prevAll("input[type='hidden']").val(src);
+    //$(".preview").attr("src", src);
+    
+});
+
+//删除
+$(document).on('click','.delete', function(){
+	$(this).parent().parent().remove();
+	trlength();
+
+	var tr = $("#xianshi .tr");
+	for (var i = 1; i <= tr.length; i++) {
+		var pname = 'pname'+i;
+		var price = 'price'+i;
+		var imgsrc = 'imgsrc'+i;
+		var wximg = 'wximg'+i;
+		tr.eq(i-1).children("td:nth-child(1)").children("input").attr("name",pname);
+		tr.eq(i-1).children("td:nth-child(2)").children("input").attr("name",price);
+		tr.eq(i-1).children("td:nth-child(3)").children("input[type='hidden']").attr("name",imgsrc);
+		tr.eq(i-1).children("td:nth-child(3)").children("input[type='file']").attr("name",wximg);
+	}
+
+});
+
+/*增加价格段*/
+function tmadd(){
+	var trlen=$("#xianshi .tr").length+1;
+	$(".trlen").val(trlen);
+	var str = "<tr class='tr'><td><input type='text' name='pname"+trlen+"'></td><td><input type='text' name='price"+trlen+"'>元</td><td><img class='preview' src='' alt='点击上传图片'/><input type='hidden' name='imgsrc"+trlen+"' value='' /><input class='file' type='file' name='wximg"+trlen+"' /></td><td><a class='delete'>删除</a></td></tr>";
+	$("#xianshi tbody").children('tr:last-child').after(str);
+}
+
+/*检测是否可以提交*/
+function checksubmit(){
+	var trlen = $(".trlen").val();
+	var a = false;
+	for (var i = 1; i <= trlen; i++) {
+		var pname = "input[name='pname"+i+"']";
+		var price = "input[name='price"+i+"']";
+		var imgsrc = "input[name='imgsrc"+i+"']";
+		var pnaval = $(pname).val().length;
+		var prival = $(price).val().length;
+		var imgsrcval = $(imgsrc).val().length;
+		console.log(imgsrcval);
+		if (pnaval==0 || prival==0 || imgsrcval==0) {
+			alert("内容不能为空");
+			a = false;
+			break;
+		}
+		else{
+			a =  true;
+		}
+	}
+	if (a) {
+		$("form").submit();
+	}
+}
+
+/*获取tr的长度*/
+function trlength(){
+	trlen=$("#xianshi .tr").length;
+	$(".trlen").val(trlen);
+}
+
+/**/
+</script>
+</block>
+</extend>

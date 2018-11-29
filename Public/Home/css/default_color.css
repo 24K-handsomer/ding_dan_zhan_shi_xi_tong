@@ -1,0 +1,464 @@
+/*******************************************
+ * è‡ªå®šä¹‰é…è‰²cssæ–‡ä»¶æ”¾åœ¨defaut_colorçš„åŒçº§ç›®å½•,ç„¶åŽåœ¨ "ç³»ç»Ÿ/é…ç½®ç®¡ç†" ä¸­ä¸º"COLOR_STYLE"å¢žåŠ ä¸€è¡Œé…ç½®é¡¹
+ *********************************************/
+
+/********************************************
+ * base.css
+ * æè¿°ï¼šé‡ç½®é¡µé¢å…ƒç´ å¹¶è®¾ç½®å¸ƒå±€æ ·å¼
+ * ä½œç”¨èŒƒå›´ï¼š å…¨å±€
+ *******************************************/
+
+html,body,input,textarea,select,legend{
+	color:#404040;
+	/*å…¨å±€é»˜è®¤æ–‡å­—é¢œè‰²*/
+}
+a {
+	color: #2d7200;
+	/*å…¨å±€é»˜è®¤é“¾æŽ¥é¢œè‰²*/
+}
+a:hover{
+	color: #4bbd00;
+	/*å…¨å±€é»˜è®¤é“¾æŽ¥æ‚¬åœé¢œè‰²*/
+}
+
+/*************************************************
+ * common.css 
+ * æè¿°ï¼šå®šä¹‰å…¬å…±ç±»å
+ * ä½œç”¨èŒƒå›´: å…¬å…±ï¼Œç‹¬ç«‹æ ·å¼
+ *************************************************/
+
+/* æ–‡ç« æœç´¢/ç”¨æˆ·æœç´  ä¸‹æ‹‰å¼¹å‡ºæŒ‰é’® å®žå¿ƒå°ç®­å¤´ */
+.arrow-down {
+	border-top-color: #000;
+}
+.arrow-up {
+	border-bottom-color: #000;
+}
+.arrow-left {
+	border-right-color: #000;
+}
+.arrow-right {
+	border-left-color: #000;
+}
+
+/********************************************** 
+ * module.css 
+ * æè¿°ï¼šå®šä¹‰å¸¸ç”¨ç»„ä»¶æ ·å¼
+ * ä½œç”¨èŒƒå›´: å…¬å…±ï¼Œç»„ä»¶æ¨¡å—
+ ***********************************************/
+
+/* æ–‡ç« æ–°å¢žç¼–è¾‘é¡µ,æƒé™æŽˆæƒé¡µ,åˆ†ç±»ç¼–è¾‘é¡µ tabæ ‡ç­¾ */
+.tab-nav {
+	border-bottom-color: #e0e0e0;
+}
+.tab-nav .current a,
+.tab-nav .current a:hover {
+	border-color: #34b4e0 #e0e0e0 #f6f6f6;
+}
+
+
+/* (æš‚æœªä½¿ç”¨) é¢åŒ…å±‘å¯¼èˆª */
+.breadcrumb {
+	color: #999;
+}
+.tags-crumb li {
+	background-color: #e0e0e0;
+}
+.tags-crumb .current {
+	background-color: #f60;
+}
+.tags-crumb .current a {
+	color: #fff;
+}
+.tags-crumb li i {
+	border-left-color: #fff
+}
+.tags-crumb li b {
+	border-left-color: #e0e0e0
+}
+.tags-crumb .current b {
+	border-left-color: #f60;
+}	
+
+/* åˆ—è¡¨åˆ†é¡µ */
+.page a,
+.page span {
+    color: #686868;
+    border: 1px solid #CCCCCC;
+}
+.page a:hover
+ {
+    background: #E1E1E1;
+}
+.page .current {
+	border-top: 3px solid #4BBD00;
+	height: 28px;
+	line-height: 26px;
+}
+
+/* uploadifyæ’ä»¶ä¸Šä¼ æŒ‰é’® */
+.uploadify-button {
+	color: #fff;
+	background-color: #27ae60;
+}
+
+/* åˆ†ç±»ç®¡ç†/åˆ†ç±»æŽˆæƒ æ ‘å½¢èœå•ï¼ˆç›®å‰åªæ”¯æŒ3çº§ï¼‰
+------------------------------------------ */
+.category .hd {
+	border-bottom-color: #d4d4d4;
+	color:#fff;
+	background-color: #353535;
+}
+.category .cate-item dt {
+	border-bottom-color: #E7E7E7;
+}
+.category .name .error {
+	color: #B94A48;
+}
+.category .name .success {
+	color: #468847;
+}
+
+.close {
+    color: #000000;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+
+/******************************************** 
+ * form.css 
+ * æè¿°ï¼šå®šä¹‰è¡¨å•æ ·å¼
+ * ä½œç”¨èŒƒå›´: å…¬å…±ï¼Œè¡¨å•æ¨¡å—ï¼Œè¡¨å•å¸ƒå±€
+ *********************************************/
+
+/* è¡¨å•ç»„ä»¶
+------------------------------------------ */
+.text,.textarea {
+	border-color: #eeeeee;
+	background-color: #fff;
+}
+select {
+	border-color: #ccc;
+}
+.must {
+	color: #f00; /* è¡¨å•å¿…å¡«é¡¹æ ‡è¯†å­—ç¬¦*/
+}
+
+/* å¤šè¡Œä¸¤åˆ—è¡¨å•
+------------------------------------------ */
+.form-horizontal .item-label .check-tips {
+	color: #aaa; /* è¡¨å•labelåŽé¢çš„æç¤ºæ–‡å­— */
+}
+.form-horizontal .controls .check-tips {
+	color: #999; /*è¡¨å•ajaxæ“ä½œå®ŒæˆåŽè¿”å›žçš„æç¤ºæ–‡å­—*/
+}
+
+/* æœç´¢è¡¨å•
+------------------------------------------ */
+.search-form .sleft {/* é«˜çº§æœç´¢å·¦è¾¹çš„æœç´¢æ¡† */
+	border-color: #ebebeb;
+	background-color: #fff;
+}
+
+/* çŠ¶æ€æœç´¢ä¸‹æ‹‰é€‰é¡¹ */
+.search-form .drop-down ul {
+	background-color: #fff;
+	border-color: #ebebeb;
+}
+.search-form .drop-down ul li {
+	border-top-color: #ebebeb;
+}
+.search-form .drop-down ul a {
+	color: #404040;
+}
+.search-form .drop-down ul a:hover {
+	background-color: #f0f0f0;
+}
+.search-form .sch-btn:hover {
+	/* æœç´¢æäº¤æŒ‰é’® */
+	color: #fff;
+}
+
+.focus{
+	border: 1px solid #d1d1d1;
+	box-shadow: 0 0 12px #ECECEC;
+}
+/*********************************************
+ * table.css 
+ * æè¿°ï¼šå®šä¹‰æ•°æ®è¡¨æ ¼æ ·å¼
+ * ä½œç”¨èŒƒå›´: å…¬å…±ï¼Œè¡¨æ ¼æ¨¡å—
+ **********************************************/
+
+/* å†…å®¹åŒº è¡Œé»˜è®¤é¢œè‰²*/
+.data-table tbody tr {
+	background-color: #ffffff;
+	color: #686868;
+}
+.data-table thead th,
+.data-table tbody td {
+	/*éžéš”è¡Œå˜è‰²æ—¶ ç”¨äºŽè¡ŒåŒºåˆ†çš„å•å…ƒæ ¼åº•çº¿é¢œè‰² */
+    border-bottom-color:  #f4f4f4;
+}
+/* è¡¨å¤´é…è‰² */
+.data-table thead th {
+	color:#fff;
+    background-color: #353535;
+}
+/* éš”è¡Œå˜è‰² è¡Œé»˜è®¤é¢œè‰² */
+.table-striped tbody tr {
+	background-color: #fefefe;
+	color: #686868;
+}
+/* éš”è¡Œå˜è‰² å¶æ•°è¡Œé…è‰² */
+.table-striped tbody tr:nth-child(even) {
+	background-color: #f2f2f2;
+
+}
+
+
+/************************************* 
+ * button.css 
+ * æè¿°ï¼šå®šä¹‰æŒ‰é’®æ ·å¼
+ * ä½œç”¨èŒƒå›´: å…¬å…±ï¼ŒæŒ‰é’®ç»„ï¼Œå•ç‹¬æŒ‰é’®
+ *************************************/
+
+/* æ™®é€šæŒ‰é’® */
+.btn {
+    color: #edffd1;
+	background-color: #4bbd00;
+}
+.btn:hover {
+    color: #ffffff;
+    background-color: #4cdb00;
+}
+
+/* è¡¨å•è¿”å›žæŒ‰é’® */
+.btn-return {
+	color: #fff;
+}
+
+/* è¡¨å•æäº¤æŒ‰é’®(ç¡®å®š,ä¿å­˜,æäº¤) */
+.submit-btn {
+	color: #fff;
+    background-color: #CC3900;
+}
+.submit-btn:hover {
+    color: #fff;
+    background-color: #ff2610;
+}
+
+/* ä¸‹æ‹‰å¼¹å‡ºæŒ‰é’® */
+.btn-group .dropdown,
+.btn-group-click .dropdown {
+	border-color: #ccc;
+	background-color: #fff;
+}
+.btn-group .dropdown a:hover,
+.btn-group-click .dropdown a:hover {
+    background-color: #eee;
+}
+
+/* è¢«ç¦ç”¨çš„æŒ‰é’® */
+.btn.disabled {
+	background-color: #8d8d8d;
+	cursor: not-allowed;
+}
+
+
+/************************************* 
+ * style.css
+ *************************************/
+
+/* å¤´éƒ¨Logo,ä¸»å¯¼èˆª*/
+.header {
+    background-color: #383838;
+}
+/* ä¸»å¯¼èˆª */
+.main-nav a {
+    color: #FFF;
+}
+.main-nav a:hover {
+    background-color:#656565;
+}
+.main-nav .current{
+    background-color: #656565;
+}
+.main-nav .current a {
+    background-color: #86db00;
+}
+
+/* é¡¶éƒ¨å³ä¾§ ç”¨æˆ·bar */
+.header .user-menu {
+    border-color: #ddd;
+    background-color: #fff;
+}
+.header .user-menu li {
+    border-bottom-color: #ddd;
+}
+.header .user-menu a:hover {
+    color: #424242;
+    background-color: #f5f5f5;
+}
+
+/* è¾¹æ å¯¼èˆªæ ·å¼
+------------------------------------------ */
+.sidebar {
+	/* å·¦ä¾§æ èƒŒæ™¯ */
+	background: url("../img/bg.png") repeat #6b6b6b;
+}
+/* å­å¯¼èˆªGroupæ ‡é¢˜æ  */
+.subnav h3 {
+    color: #fff;
+}
+.subnav h3 a {
+	color: #fff;
+}
+
+/* å·¦ä¾§äºŒçº§èœå• */
+.side-sub-menu > li > .item {
+    color: #f1f1f1;
+}
+.side-sub-menu > li > .item:hover{
+	color: #ffffff;
+	background: #7c7c7c;
+}
+.side-sub-menu > li > .item:hover{
+	color: #ffffff;
+	background: #7c7c7c;
+}
+.side-sub-menu > .current > .item,
+.side-sub-menu > .hover > .item {
+    color: #414141;
+}
+.side-sub-menu > .current > .item,
+.side-sub-menu > .current > .item:hover {
+	/* é«˜äº®å¯¼èˆª */
+	color: #414141;
+    background: url(../img/subnav_current.png) no-repeat 165px 12px #f6f6f6;
+}
+
+/* windowså¼€å§‹èœå•å¼å­èœå• */
+.side-sub-menu li .subitem {
+    border-color: #ccc;
+    background-color: #fff;
+}
+.side-sub-menu .subitem .item:hover {
+    background: url(../img/subnav_current.png) no-repeat 130px 12px #f5f5f5;
+}
+
+/* åŽå°ä¸»å†…å®¹åŒºåŸŸ
+------------------------------------------------- */
+.main {
+	background-color: #f6f6f6;
+}
+.main-title h2 {
+    color: #445566;   
+}
+.main-title .ca {
+	/* å†…å®¹åˆ—è¡¨ é¢åŒ…å±‘ */
+    background: url(../img/subnav_current.png) no-repeat center center;
+}
+
+/* è®¿é—®æŽˆæƒé¡µé¢ å¤§ç±»åŒºå— */
+.checkmod {
+    border-color: #ebebeb;
+}
+.checkmod dt {
+    border-bottom-color: #ebebeb;
+    background-color: #ECECEC;
+}
+
+
+/* ç‰ˆæƒä¿¡æ¯ */
+.cont-ft {
+    background-color: #f6f6f6;
+}
+.copyright {
+    border-top-color: #ccc;
+}
+
+
+/*************************************
+ *  ç™»é™†é¡µé¢css
+ ***********************************/
+
+/* body é…è‰²*/
+#login-page {
+    color: #000;
+    background-color: #30333F;
+}
+
+
+#login-page .login-form {
+    background-color: #fff;
+    box-shadow: 0 0 26px #041A36;
+    border-top-color: #42EC00;
+}
+#login-page .login-form h3 {
+    color: #8D9CAA;
+}
+#login-page .login-form .check-tips {
+    color: #ff0000;
+}
+#login-page .login-form .item {
+    border-color:  #ececec;
+}
+#login-page .login-form .focus {
+    border-color: #A6E1F3;
+    box-shadow: 0 0 12px #BAF7FF;
+}
+#login-page .login-form .icon-login-user,
+#login-page .login-form .icon-login-pwd,
+.#login-page login-form .icon-login-verifycode {
+    background: url("../img/icon24_login.png") no-repeat;
+}
+#login-page .login-form .icon-login-user {
+    background-position: 0 0;
+}
+#login-page .login-form .icon-login-pwd {
+    background-position: -48px 0;
+}
+#login-page .login-form .icon-login-verifycode {
+    background-position: -24px 0;
+}
+#login-page .login-form input {
+    background-color: #fff;
+    color:#686868;
+}
+#login-page .login-form .login-btn {
+    color: #FFFFFF;
+    background-color: #40C402;
+}
+#login-page .login-form .login-btn:hover {
+    background-color: #42EC00;
+}
+#login-page .login-form .login-btn[disabled] {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    cursor: default;
+    box-shadow: none;
+}
+#login-page .icon-loading {
+    background: url(../img/loading_icon.gif) no-repeat 0 0;
+}
+
+
+#login-page input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+#login-page .logo-img {
+    background: url(../img/logo.png) no-repeat 0 center;
+}
+
+#login-page .welcome{
+    color:#ddd;
+}
+
+#login-page .reloadverify{
+    color:#69C3FF;
+}
+
+#login-page img.verifyimg{
+	border-color: #ececec;
+}

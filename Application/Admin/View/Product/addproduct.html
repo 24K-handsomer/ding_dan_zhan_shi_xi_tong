@@ -1,0 +1,46 @@
+<extend name="Public/base"/>
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/addtest.css">
+	<style type="text/css">
+		#table-top{
+			text-align: center;
+		}
+		.file{
+            display: block;
+            width: 400px;
+            height: 300px;
+            opacity:0;
+            margin: -300px 0 0 0;            
+        }
+        .preview{
+            display: block;
+            width: 400px;
+            height: 300px;
+        }
+	</style>
+</block>
+<block name="nav">
+	<span>添加产品</span>
+</block>
+<block name="body">
+	<div id="row">添加产品</div>
+	<form action="__CONTROLLER__/addproduct" method="POST">
+		<div id="table-top">
+			<span>&nbsp;产&nbsp;品&nbsp;名&nbsp;&nbsp;&nbsp;：</span>
+			<input type="text" placeholder="例:善活素" name="pname" >
+		</div>
+		<div id="table-top">
+			<span>&nbsp;产&nbsp;品&nbsp;标&nbsp;记：</span>
+			<input type="text" placeholder="例:shs01(字母、数字组成)" name="premark" >
+		</div>
+		<div id="table-top">
+			<input type="submit" name="" value="提交">
+		</div>
+	</form>
+</block>
+<block name="script">
+<script type="text/javascript">
+
+</script>
+</block>
+</extend>

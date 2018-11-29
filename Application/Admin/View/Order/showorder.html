@@ -1,0 +1,123 @@
+<extend name="Public/base"/>
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/filelist.css">
+	<style type="text/css">
+		#submit{
+			text-align: center;
+    		margin-top: 20px;
+		}
+	</style>
+</block>
+<block name="nav">
+	<span>订单详情</span>
+</block>
+<block name="body">
+<form action="__CONTROLLER__/updateorder?id={$order['id']}" method="post">
+	<table border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr><th colspan="5">商品信息</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><strong>商品名称</strong></td>
+				<td><strong>价格名称</strong></td>
+				<td><strong>价格</strong></td>
+				<td><strong>备注信息</strong></td>
+				<td><strong>是否付款</strong></td>
+			</tr>
+			<tr>
+				<td>{$order['pname']}</td>
+				<td>{$order['prname']}</td>
+				<td>{$order['price']}</td>
+				<td>
+				<if condition="$order['remark2'] eq '0'"><input type="text" name="remark2" value="">
+				<else /><input type="text" name="remark2" value="{$order['remark2']}">
+				</if>
+				</td>
+				<td>
+					<select name="ispay">
+					<if condition="$order['ispay'] eq 0">
+						<option value="0" selected = "selected">未确认</option>
+					<else />
+						<option value="0">未确认</option>
+					</if>
+					
+					<if condition="$order['ispay'] eq 1">
+						<option value="1" selected = "selected">已付款</option>
+					<else />
+						<option value="1">已付款</option>
+					</if>
+					
+					<if condition="$order['ispay'] eq 2">
+						<option value="2" selected = "selected">未付款</option>
+					<else />
+						<option value="2">未付款</option>
+					</if>
+					</select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<br> 
+	<table border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr><th colspan="4">收货人信息</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><strong>收货人：</strong></td>
+				<td>{$order['realname']}</td>
+				<td><strong>身份证：</strong></td>
+				<td>{$order['realid']}</td>
+			</tr>
+			<tr>
+				<td><strong>地址：</strong></td>
+				<td>[{$order['province']}/{$order['city']}/{$order['county']}]{$order['address']}</td>
+				<td><strong>手机号：</strong></td>
+				<td>{$order['telephone']}</td>
+			</tr>
+			<tr>
+				<td><strong>备注：</strong></td>
+				<td>
+				<if condition="$order['remark'] eq '0'">
+				<else />{$order['remark']}
+				</if>
+				</td>
+				<td><strong>是否发货：</strong></td>
+				<td>
+				<select name="issend">
+				<if condition="$order['issend'] eq 0">
+					<option value="0" selected = "selected">未确认</option>
+				<else />
+					<option value="0">未确认</option>
+				</if>
+				
+				<if condition="$order['issend'] eq 1">
+					<option value="1" selected = "selected">已发货</option>
+				<else />
+					<option value="1">已发货</option>
+				</if>
+				
+				<if condition="$order['issend'] eq 2">
+					<option value="2" selected = "selected">未发货</option>
+				<else />
+					<option value="2">未发货</option>
+				</if>
+				</select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="submit">
+		<input type="submit" name="" value="更新提交">
+	</div>
+</form>
+	
+</block>
+<block name="script">
+<script type="text/javascript">
+    
+</script>
+</block>
+</extend>

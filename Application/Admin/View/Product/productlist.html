@@ -1,0 +1,50 @@
+<extend name="Public/base"/>
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/filelist.css">
+</block>
+<block name="nav">
+	<span>产品列表</span>
+</block>
+<block name="body">
+	<div id="row">
+		<form name='MyForm' id='MyForm' method='GET' action="__CONTROLLER__/productlist" >
+	        <span>产品名：</span>
+	        <input type="text" name="pname" value="{$pname}" required>
+	        <input type="submit" name="" value="搜索">
+	    </form>
+
+	    <div><a href="__CONTROLLER__/addproduct">添加产品</a></div>
+    </div>
+	<table border="1" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td>产品</td>
+			<td>产品标记</td>
+			<td>发布时间</td>
+			<td>操作</td>
+		</tr>
+
+		<?php $i=($p-1)*$limit+1; ?>
+		<foreach name="productlist" item="v">
+		<tr id="">
+			<td><?php echo $i++; ?></td>
+			<td>{$v.pname}</td>
+			<td>{$v.premark}</td>
+			<td>{$v.crtime}</td>
+			<td>
+				<a href="__CONTROLLER__/showproduct?id={$v.pid}">查看</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="__CONTROLLER__/updateproduct?id={$v.pid}">编辑</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="__CONTROLLER__/deleteproduct?id={$v.pid}">删除</a>
+			</td>
+		</tr>
+		</foreach>
+
+	</table>
+	<div id="page">{$show}</div>
+</block>
+<block name="script">
+<script type="text/javascript">
+    
+</script>
+</block>
+</extend>

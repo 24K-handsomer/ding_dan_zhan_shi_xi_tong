@@ -1,0 +1,82 @@
+<extend name="Public/base"/>
+<block name="style">
+	<link rel="stylesheet" type="text/css" href="__CSS__/filelist.css">
+</block>
+<block name="nav">
+	<span>订单列表</span>
+</block>
+<block name="body">
+	<div id="row">
+		<form name='MyForm' id='MyForm' method='GET' action="__CONTROLLER__/orderlist" >
+	        <span>订单产品名：</span>
+	        <select name="pname">
+	        	<option value="所有">所有</option>
+				<foreach name="productlist" item="vv">
+					<if condition="$vv['pname'] eq $postpname">
+						<option value="{$vv['pname']}" selected="selected">{$vv['pname']}</option>
+					<else />
+						<option value="{$vv['pname']}">{$vv['pname']}</option>
+					</if>
+				</foreach>
+	        </select>
+	        <input type="submit" name="" value="搜索">
+	    </form>
+    </div>
+	<table border="1" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td>收货信息</td>
+			<td>订单详情</td>
+			<td>
+				订单状态<br>
+				付款--发货
+			</td>
+			<td>操作</td>
+			<td>创建时间</td>
+		</tr>
+
+		<?php $i=($p-1)*$limit+1; ?>
+		<foreach name="orderlist" item="v">
+		<tr>
+			<td><?php echo $i++; ?></td>
+			<td>
+				{$v.realname}[手机:{$v.telephone}]&nbsp;[{$v.province}-{$v.city}-{$v.county}]<br>
+				{$v.address}
+			</td>
+			<td>
+				{$v.pname}[{$v.prname}：￥{$v.price}]
+			</td>
+			<td>
+				<if condition="$v.ispay == 0">
+					<span>未确认</span>
+				<elseif condition="$v.ispay == 1" />
+					<span style="color: green">已付款</span>
+				<else /> 
+					<span style="color: red">未付款</span>
+				</if>
+				<span>--</span>
+				<if condition="$v.issend == 0">
+					<span>未确认</span>
+				<elseif condition="$v.issend == 1" />
+					<span style="color: green">已发货</span>
+				<else /> 
+					<span style="color: red">未发货</span>
+				</if>
+			</td>
+			<td>
+				<a href="__CONTROLLER__/showorder?id={$v.id}">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="__CONTROLLER__/deleteorder?id={$v.id}">删除</a>
+			</td>
+			<td>{$v.crtime}</td>
+		</tr>
+		</foreach>
+
+	</table>
+	<div id="page">{$show}</div>
+</block>
+<block name="script">
+<script type="text/javascript">
+    
+</script>
+</block>
+</extend>
